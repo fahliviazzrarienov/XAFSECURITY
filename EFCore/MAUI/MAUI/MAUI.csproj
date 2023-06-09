@@ -24,9 +24,26 @@
     <UseInterpreter Condition="$(TargetFramework.Contains('-ios')) AND '$(Configuration)' == 'Release'">True</UseInterpreter>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
+	  <ApplicationTitle>GPN</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <ApplicationTitle>GPN</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
+	  <ApplicationTitle>GPN</ApplicationTitle>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <ApplicationTitle>GPN</ApplicationTitle>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiImage Include="Resources\appicon.svg" IsAppIcon="true" ForegroundFile="Resources\splashscreen.svg" Color="#FFFFFF" />
+		<MauiImage Include="Resources\splashscreen.svg" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\splashscreen.svg" Color="#5B27D9" />
@@ -61,11 +78,12 @@
 
 	<ItemGroup>
 	  <None Remove="Platforms\Android\Resources\xml\provider_paths.xml" />
+	  <None Remove="Resources\Images\genting_logo.svg" />
+	  <None Remove="Resources\splashscreen.svg" />
 	</ItemGroup>
 
-
 	<ItemGroup>
-    <PackageReference Include="DevExpress.Maui.CollectionView" Version="23.1.2-pre-23080" />
-    <PackageReference Include="DevExpress.Maui.Editors" Version="23.1.2-pre-23080" />
-  </ItemGroup>
+	  <PackageReference Include="DevExpress.Maui.CollectionView" Version="23.1.5" />
+	  <PackageReference Include="DevExpress.Maui.Editors" Version="23.1.5" />
+	</ItemGroup>
 </Project>
