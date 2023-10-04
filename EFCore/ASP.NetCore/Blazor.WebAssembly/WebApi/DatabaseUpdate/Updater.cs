@@ -33,10 +33,10 @@ public class Updater : ModuleUpdater {
         var defaultRole = CreateDefaultRole();
         sampleUser.Roles.Add(defaultRole);
 
-        var editorUser = ObjectSpace.FirstOrDefault<ApplicationUser>(user=>user.UserName=="Editor")??ObjectSpace.CreateObject<ApplicationUser>();
+        var editorUser = ObjectSpace.FirstOrDefault<ApplicationUser>(user=>user.UserName== "Editor") ??ObjectSpace.CreateObject<ApplicationUser>();
         if (ObjectSpace.IsNewObject(editorUser)) {
             //create Editor User/Role
-            editorUser.UserName="Editor";
+            editorUser.UserName= "Editor";
             editorUser.Email = "Editor@example.com";
 
             var editorRole = ObjectSpace.CreateObject<PermissionPolicyRole>();

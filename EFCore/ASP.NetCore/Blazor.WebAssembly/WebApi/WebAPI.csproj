@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <Deterministic>false</Deterministic>
     <AssemblyVersion>1.0.*</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <Configurations>Debug;Release;EasyTest</Configurations>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>f09bbf64-a806-4e9e-8063-00fdb5cb74b4</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Model.xafml" />
@@ -23,22 +24,21 @@
     <EmbeddedResource Include="Resourses\John.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp.Api.EFCore.All" Version="23.1.1-beta-23135" />
-    <PackageReference Include="DevExpress.ExpressApp.AuditTrail.EFCore" Version="23.1.1-beta-23135" />
-    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="23.1.1-beta-23135" />
-    <PackageReference Include="DevExpress.ExpressApp.ReportsV2" Version="23.1.1-beta-23135" />
-    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="23.1.1-beta-23135" />
+    <PackageReference Include="DevExpress.ExpressApp.Api.EFCore.All" Version="23.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.AuditTrail.EFCore" Version="23.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="23.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2" Version="23.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="23.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.5.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="XtraReport1.cs">
-      <SubType>XtraReport</SubType>
-    </Compile>
+    <Compile Update="XtraReport1.cs" />
   </ItemGroup>
 </Project>

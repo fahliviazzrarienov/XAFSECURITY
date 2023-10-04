@@ -10,25 +10,53 @@ namespace WebAPI.BusinessObjects;
 
 // This code allows our Model Editor to get relevant EF Core metadata at design time.
 // For details, please refer to https://supportcenter.devexpress.com/ticket/details/t933891.
+
+
 public class WebAPIContextInitializer : DbContextTypesInfoInitializerBase {
 	protected override DbContext CreateDbContext() {
-		var optionsBuilder = new DbContextOptionsBuilder<WebAPIEFCoreDbContext>()
-            .UseSqlServer(";")
-            .UseChangeTrackingProxies()
-            .UseObjectSpaceLinkProxies();
+        //var optionsBuilder = new DbContextOptionsBuilder<WebAPIEFCoreDbContext>()
+        //          .UseSqlServer(";")
+        //          .UseChangeTrackingProxies()
+        //          .UseObjectSpaceLinkProxies();
+        //      return new WebAPIEFCoreDbContext(optionsBuilder.Options);
+        var optionsBuilder = new  DbContextOptionsBuilder<WebAPIEFCoreDbContext>();
+        //optionsBuilder.UseSqlServer("Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\\mssqllocaldb;Initial Catalog=MyDBName");
+        optionsBuilder.UseNpgsql("Host=localhost;Database=webapi;Username=postgres;Password=1");
+        optionsBuilder.UseChangeTrackingProxies();
+        optionsBuilder.UseObjectSpaceLinkProxies();
         return new WebAPIEFCoreDbContext(optionsBuilder.Options);
-	}
+    }
+    
+
+    //public Postgre1EFCoreDbContext CreateDbContext(string[] args)
+    //{
+    //    //throw new InvalidOperationException("Make sure that the database connection string and connection provider are correct. After that, uncomment the code below and remove this exception.");
+    //    var optionsBuilder = new DbContextOptionsBuilder<Postgre1EFCoreDbContext>();
+    //    //optionsBuilder.UseSqlServer("Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\\mssqllocaldb;Initial Catalog=MyDBName");
+    //    optionsBuilder.UseNpgsql("Host=localhost;Database=my_db2;Username=postgres;Password=qwerty");
+    //    optionsBuilder.UseChangeTrackingProxies();
+    //    optionsBuilder.UseObjectSpaceLinkProxies();
+    //    return new Postgre1EFCoreDbContext(optionsBuilder.Options);
+    //}
 }
 //This factory creates DbContext for design-time services. For example, it is required for database migration.
 public class WebAPIDesignTimeDbContextFactory : IDesignTimeDbContextFactory<WebAPIEFCoreDbContext> {
 	public WebAPIEFCoreDbContext CreateDbContext(string[] args) {
-		throw new InvalidOperationException("Make sure that the database connection string and connection provider are correct. After that, uncomment the code below and remove this exception.");
-		//var optionsBuilder = new DbContextOptionsBuilder<WebAPIEFCoreDbContext>();
-		//optionsBuilder.UseSqlServer("Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\\mssqllocaldb;Initial Catalog=WebAPI");
+		//throw new InvalidOperationException("Make sure that the database connection string and connection provider are correct. After that, uncomment the code below and remove this exception.");
+        //var optionsBuilder = new DbContextOptionsBuilder<WebAPIEFCoreDbContext>();
+        //optionsBuilder.UseSqlServer("Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\\mssqllocaldb;Initial Catalog=WebAPI");
         //optionsBuilder.UseChangeTrackingProxies();
         //optionsBuilder.UseObjectSpaceLinkProxies();
-		//return new WebAPIEFCoreDbContext(optionsBuilder.Options);
-	}
+        //return new WebAPIEFCoreDbContext(optionsBuilder.Options);
+        var optionsBuilder = new DbContextOptionsBuilder<WebAPIEFCoreDbContext>();
+        //optionsBuilder.UseSqlServer("Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\\mssqllocaldb;Initial Catalog=MyDBName");
+        optionsBuilder.UseNpgsql("Host=localhost;Database=webapi;Username=postgres;Password=1");
+        optionsBuilder.UseChangeTrackingProxies();
+        optionsBuilder.UseObjectSpaceLinkProxies();
+        return new WebAPIEFCoreDbContext(optionsBuilder.Options);
+    }
+
+  
 }
 [TypesInfoInitializer(typeof(WebAPIContextInitializer))]
 public class WebAPIEFCoreDbContext : DbContext {

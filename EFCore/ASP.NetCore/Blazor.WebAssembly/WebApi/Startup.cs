@@ -86,7 +86,8 @@ public class Startup {
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
                 string connectionString = Configuration.GetConnectionString("ConnectionString");
-                options.UseSqlServer(connectionString);
+                //options.UseSqlServer(connectionString);
+                options.UseNpgsql(connectionString);
             }
             else {
                 string sqliteDBPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "WebAPIDemo.db");
@@ -103,7 +104,8 @@ public class Startup {
         });
         services.AddDbContextFactory<WebAPIAuditingDbContext>((serviceProvider, options) => {
             string connectionString = Configuration.GetConnectionString("ConnectionString");
-            options.UseSqlServer(connectionString);
+            //options.UseSqlServer(connectionString);
+            options.UseNpgsql(connectionString);
             options.UseChangeTrackingProxies();
             options.UseObjectSpaceLinkProxies();
             options.UseXafServiceProviderContainer(serviceProvider);

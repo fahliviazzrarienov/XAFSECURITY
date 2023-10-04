@@ -4,12 +4,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor" Version="23.1.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Security.AspNetCore" Version="23.1.5" />
+    <PackageReference Include="DevExpress.Blazor" Version="23.2.1-alpha-23255" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.AspNetCore" Version="23.2.1-alpha-23255" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
-    <PackageReference Include="Npgsql" Version="7.0.6" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BusinessObjectsLibrary\BusinessObjectsLibrary.csproj" />

@@ -38,9 +38,9 @@ namespace WebAPI.API {
         public async Task<IActionResult> Archive([FromBody] Post post) {
             using var objectSpace = _securedObjectSpaceFactory.CreateObjectSpace<Post>();
             post = objectSpace.GetObject(post);
-            var photo = post.Author.Photo.MediaResource.MediaData;
+            /*var photo = post.Author.Photo.MediaResource.MediaData;*/
             await System.IO.File.WriteAllTextAsync($"{post.ID}",
-                JsonSerializer.Serialize(new { photo, post.Title, post.Content, post.Author.UserName }));
+                JsonSerializer.Serialize(new { post.Title, post.Content, post.Author.UserName }));
             return Ok();
         }
 

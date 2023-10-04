@@ -19,7 +19,7 @@ namespace MAUI.ViewModels {
 
 		public Command ArchiveCommand { get; }
 
-		public ImageSource Thumbnail 
+		public ImageSource Thumbnail
 			=> ImageSource.FromStream(() => new MemoryStream(_photoBytes));
 
 		public Guid Id { get; set; }
@@ -44,7 +44,7 @@ namespace MAUI.ViewModels {
 
 		public async Task LoadItemId(string itemId) {
 			try {
-				_photoBytes = await DataStore.GetAuthorPhotoAsync(Guid.Parse(itemId));
+				/*_photoBytes = await DataStore.GetAuthorPhotoAsync(Guid.Parse(itemId));*/
 				OnPropertyChanged(nameof(Thumbnail));
 				Post = await DataStore.GetItemAsync(itemId);
 				Id = Post.ID;

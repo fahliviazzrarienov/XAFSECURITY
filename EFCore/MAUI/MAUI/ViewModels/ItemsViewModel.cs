@@ -11,7 +11,6 @@ namespace MAUI.ViewModels {
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 			ItemTapped = new Command<Post>(OnItemSelected);
 			AddItemCommand = new Command(OnAddItem);
-			ShapeItCommand = new Command(async () => await DataStore.ShapeIt());
 		}
 		
 		public ObservableCollection<Post> Items { get; }
