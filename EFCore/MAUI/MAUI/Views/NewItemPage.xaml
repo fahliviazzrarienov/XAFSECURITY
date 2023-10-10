@@ -7,27 +7,64 @@
              BackgroundColor="{StaticResource NormalBackgroundColor}"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="true"
-             x:Class="MAUI.Views.NewItemPage">
+             x:Class="MAUI.Views.NewItemPage">    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" Command="{Binding SaveCommand}"/>
-    </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+    </ContentPage.ToolbarItems> 
+    <ContentPage.Content>        
         <StackLayout>
-            <dxdf:DataFormView x:Name="dataForm" DataObject="{Binding .}" CommitMode="PropertyChanged" ContentPadding="0" Margin="15">
+            <dxe:ComboBoxEdit
+                FocusedBorderColor="{StaticResource Primary}"
+                DropDownBackgroundColor="{StaticResource NormalBackgroundColor}"
+                DropDownSelectedItemTextColor="{StaticResource Primary}"
+                ErrorColor="{StaticResource Primary}"   
+                SelectedItem="{StaticResource Gray600}"
+                FocusedLabelColor="{StaticResource Primary}"                    
+                LabelText="ReportBy*"
+                ItemsSource="{Binding ReportBy}"                  
+                DisplayMember="ItemName"
+                Margin="10"/>
+            <dxe:ComboBoxEdit               
+                FocusedBorderColor="{StaticResource Primary}"
+                DropDownBackgroundColor="{StaticResource NormalBackgroundColor}"
+                DropDownSelectedItemTextColor="{StaticResource Primary}"
+                ErrorColor="{StaticResource Primary}"   
+                SelectedItem="{StaticResource Gray600}"
+                FocusedLabelColor="{StaticResource Primary}"               
+                LabelText="ReportType*"
+                ItemsSource="{Binding ReportType}"                  
+                DisplayMember="ItemName"
+                Margin="10"/>
+            <dxe:ComboBoxEdit               
+                FocusedBorderColor="{StaticResource Primary}"
+                DropDownBackgroundColor="{StaticResource NormalBackgroundColor}"
+                DropDownSelectedItemTextColor="{StaticResource Primary}"
+                ErrorColor="{StaticResource Primary}"   
+                SelectedItem="{StaticResource Gray600}"
+                FocusedLabelColor="{StaticResource Primary}"               
+                LabelText="Periode*"
+                ItemsSource="{Binding Periode}"                  
+                DisplayMember="ItemName"
+                Margin="10"/>
+            
+            <!--<dxdf:DataFormView x:Name="dataForm" DataObject="{Binding .}" CommitMode="PropertyChanged" ContentPadding="0" Margin="15">
                 <dxdf:DataFormView.Resources>
                     <Style TargetType="dxe:TextEdit">
                         <Setter Property="TextFontSize" Value="16" />
                         <Setter Property="TextFontFamily" Value="Roboto" />
                         <Setter Property="PlaceholderColor" Value="#acacac"/>
                     </Style>
-                </dxdf:DataFormView.Resources>
+                </dxdf:DataFormView.Resources>                  
                 <dxdf:DataFormTextItem InplaceLabelText="Title" FieldName="Title" IsLabelVisible="False" />
                 <dxdf:DataFormTextItem InplaceLabelText="Content" FieldName="Content" IsLabelVisible="False"/>
-            </dxdf:DataFormView>
-            <StackLayout Orientation="Horizontal" Spacing="15" Margin="15,0,15,0">
+                <dxdf:DataFormComboBoxItem FieldName="EnumProperty"
+                               InplaceLabelText="Title"
+                               ItemsSource="{Binding}"/>
+            </dxdf:DataFormView>-->
+            <StackLayout Orientation="Horizontal" Spacing="15" Margin="15,20,15,0">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" Style="{StaticResource PrimaryButton}" Margin="0,0,7,0"/>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Style="{StaticResource PrimaryButton}" Margin="7,0,0,0"/>
-            </StackLayout>
+            </StackLayout>       
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

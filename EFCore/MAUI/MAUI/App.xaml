@@ -7,9 +7,10 @@
     windows:Application.ImageDirectory="Assets">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#6750A4</Color>
+            <Color x:Key="Primary">#DE001E</Color>
             <Color x:Key="Gray500">#6E6E6E</Color>
             <Color x:Key="Gray600">#404040</Color>
+            <Color x:Key="Black">#231F1F</Color>
             <Color x:Key="NormalText">#55575c</Color>
             <Color x:Key="NormalHeaderText">#55575c</Color>
             <Color x:Key="NormalLightText">#959aa0</Color>
