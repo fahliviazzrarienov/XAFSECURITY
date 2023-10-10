@@ -1,5 +1,6 @@
 ﻿using DevExpress.Maui.DataForm;
 using MAUI.Models;
+using System.Collections.ObjectModel;
 
 namespace MAUI.ViewModels {
 	public class NewItemViewModel : BaseViewModel {
@@ -7,7 +8,25 @@ namespace MAUI.ViewModels {
 		string _title;
 		string _content;
 
-		public NewItemViewModel() {
+        public List<Item> ReportBy { get; set; }
+        public List<Item> ReportType { get; set; }
+        public List<Item> Periode { get; set; }
+
+
+        public NewItemViewModel() {
+
+			ReportBy = new List<Item>()
+			{
+				new Item { ItemName = "Payroll" }
+			};
+			ReportType = new List<Item>()
+			{
+				new Item { ItemName = "EstimateSalary" }
+			};
+			Periode = new List<Item>(){
+				new Item { ItemName = "AGS 2023" }
+            };
+
 			SaveCommand = new Command(OnSave, ValidateSave);
 			CancelCommand = new Command(OnCancel);
 			PropertyChanged += (_, __) => SaveCommand.ChangeCanExecute();
@@ -45,4 +64,10 @@ namespace MAUI.ViewModels {
 			await Navigation.NavigateToAsync<ItemsViewModel>();
 		}
 	}
+
+	public class Item
+	{
+        public string ItemName { get; set; }
+    }
+
 }

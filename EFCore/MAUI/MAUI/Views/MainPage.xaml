@@ -7,17 +7,21 @@
          ios:Page.UseSafeArea="true"
         x:Class="MAUI.Views.MainPage">
     <TabBar>
-        <Tab Title ="Browse" Icon="browse">
+        <!--<Tab Title ="Browse" Icon="browse">
             <ShellContent ContentTemplate="{DataTemplate views:ItemsPage}" />
+        </Tab>-->
+        <Tab Title ="Browse" Icon="browse" Route="MAUI.Views.NewItemPage">
+            <ShellContent ContentTemplate="{DataTemplate views:NewItemPage}"
+                  Route="MAUI.Views.NewItemPage" />
         </Tab>
         <Tab Title="Logout" Icon="logout" Route="MAUI.Views.LoginPage">
             <ShellContent ContentTemplate="{DataTemplate views:LoginPage}"
-                          Route="MAUI.Views.LoginPage" />
+                  Route="MAUI.Views.LoginPage" />
         </Tab>
     </TabBar>
     <TabBar>
-        <ShellContent ContentTemplate="{DataTemplate views:LoginPage}"
-                      Route="MAUI.Views.LoginPage" />
+        <ShellContent ContentTemplate="{DataTemplate views:NewItemPage}"
+                      Route="MAUI.Views.NewItemPage" />
     </TabBar>
 
 </Shell>

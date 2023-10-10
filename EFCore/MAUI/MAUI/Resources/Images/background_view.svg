@@ -6,19 +6,19 @@
 <defs>
 <linearGradient id="paint0_linear_19_3249" x1="91.5" y1="2072" x2="964.5" y2="1774" gradientUnits="userSpaceOnUse">
 <stop stop-color="#F7F2FF"/>
-<stop offset="1" stop-color="#D9CCFE"/>
+<stop offset="1" stop-color="#F7F2FF"/>
 </linearGradient>
 <radialGradient id="paint1_radial_19_3249" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(536.503 1828) rotate(32.0178) scale(470.592 715.473)">
-<stop stop-color="#60489E"/>
-<stop offset="1" stop-color="#9380CA"/>
+<stop stop-color="#F7F2FF"/>
+<stop offset="1" stop-color="#F7F2FF"/>
 </radialGradient>
 <radialGradient id="paint2_radial_19_3249" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(43.5 362.5) rotate(-5.761) scale(961.356 1229.35)">
 <stop stop-color="#F7F2FF"/>
-<stop offset="1" stop-color="#D9CCFE"/>
+<stop offset="1" stop-color="#F7F2FF"/>
 </radialGradient>
 <radialGradient id="paint3_radial_19_3249" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(115 67.5875) rotate(45.1113) scale(545.533 742.219)">
-<stop stop-color="#D9CCFE"/>
-<stop offset="1" stop-color="#B3A3E2"/>
+<stop stop-color="#F7F2FF"/>
+<stop offset="1" stop-color="#F7F2FF"/>
 </radialGradient>
 </defs>
 </svg>
